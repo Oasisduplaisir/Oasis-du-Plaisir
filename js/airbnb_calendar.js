@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         dateFormat: "d/m/Y",
         mode: "range",
         minDate: "today",
-        disable: data.busyDates,
-        onClose: function (selectedDates) {
+        disable: data.busyDates.map(date => date) ,        onClose: function (selectedDates) {
           if (selectedDates.length === 2) {
             var diff = (selectedDates[1] - selectedDates[0]) / (1000 * 60 * 60 * 24);
             if (diff > 2) {
