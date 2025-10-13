@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>L'Oasis du plaisir — Love Room</title>
+<meta content="Love Room intime près de Bordeaux — Jacuzzi privé, lit double, petit-déjeuner inclus. Réservez en ligne." name="description"/>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script><script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fr.js"></script><style>#calErrorIndispo, #calErrorMaxNights {color:#e74c3c; font-size:0.9em; margin-top:6px; display:none;}</style></head>
+<body>
+<button id="menuBtn">☰ Menu</button>
+<nav class="side-menu" id="sideMenu">
+<a href="#love-room">Love Room</a>
+<a href="#services">Services</a>
+<a href="#galerie">Galerie</a>
+</nav>
+<header class="hero">
+<img alt="Chambre romantique" class="hero-img" src="images/chambre.jpg"/>
+<div class="hero-overlay">
+<div class="hero-content">
+<h1>L'Oasis du plaisir</h1>
+<p>Votre Love Room romantique près de Bordeaux — 18+</p>
+<a class="btn" href="#reservation">Réserver maintenant</a>
+</div>
+</div>
+</header>
+<main>
+<section class="container" id="presentation">
+<h2>Bienvenue</h2>
+<p>Située à seulement 5 minutes de Blaye, laissez-vous séduire par la majestueuse Citadelle classée à l’Unesco et les charmants restaurants au bord de l’estuaire.<br/>
+À 45 minutes de Bordeaux, notre Love Room est le lieu idéal pour une soirée romantique, une surprise inoubliable ou un moment de détente à deux.<br/>
+Vous profiterez d’un cocon intime, niché dans un cadre paisible, avec grand jardin, table extérieure et bassin à poissons, pour des instants hors du temps.</p>
+</section>
+<section id="love-room"><h2>Love Room</h2><p>Jacuzzi privé à 38°, éclairage LED selon vos envies, lit King Size confortable.</p><div class="gallery-inline"><img alt="Chambre" src="images/photo1.jpeg"/><img alt="Jacuzzi" src="images/photo2.jpeg"/><img alt="Ambiance" src="images/photo3.jpeg"/></div></section>
+<section class="container features">
+<div class="card">
+<h3>Inclus dans votre séjour</h3>
+<ul>
+<li>Jacuzzi privé à disposition</li>
+<li>Lit double 160</li>
+<li>Wi‑Fi haut débit</li>
+<li>Serviettes et peignoirs fournis</li>
+<li>Parking gratuit sur place</li>
+<li>Chemin de pétales de rose</li></ul>
+</div>
+<div class="card"><h2>Un cadeau de bienvenue vous attend !</h2><p>Pour rendre votre séjour encore plus agréable, nous offrons à chaque réservation un cadeau de bienvenue, choisi par vos soins au moment de la réservation :</p><ul><li>Une bouteille de champagne 75cl</li><li>Un plateau apéritif</li><li>Ou une boîte mystère coquine</li></ul><p>Ce cadeau est entièrement offert par l’hôte et n’occasionne aucun supplément de prix. Il s’agit d’une attention personnalisée destinée à marquer votre arrivée et à rendre votre expérience unique.</p></div>
+</section>
+<section class="container tarifs"><h2>Nos Tarifs</h2><p>169 € la nuit (dimanche à jeudi)</p><p>189 € la nuit (vendredi et samedi)</p><p><strong>🌹 Offre weekend ! 359 € (Du vendredi 17h au dimanche 11h)</strong></p></section>
+<section id="galerie"><h2>Galerie</h2><p><strong>Heure d’arrivée :</strong> à partir de 17h — <strong>Heure de départ :</strong> jusqu’à 11h</p><div class="slider"></div></section>
+<section class="container" id="reservation">
+<h2>Réservez votre séjour</h2>
+<script src="https://bookeo.com/widget.js?a=425614E7R69199DAFD1EE0" type="text/javascript"></script>
+<p>Si le module ne s'affiche pas correctement, vous pouvez accéder directement à la réservation ici :
+      <a href="https://bookeo.com/widget.js?a=425614E7R69199DAFD1EE0" rel="noopener noreferrer" target="_blank">
+      Réserver sur Bookeo</a>.
+    </p>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<p><strong>Contact :</strong><br/> Téléphone : 06 15 01 21 62 — 33390 Fours<br/>Email : <a href="mailto:oasisduplaisir@hotmail.com">oasisduplaisir@hotmail.com</a></p>
+<p><strong>Mentions légales :</strong><br/>
+      Ce site est édité par <em>L’Oasis du plaisir</em>.<br/>
+      Siège social : 33390 Fours, France<br/>
+      Hébergeur : Netlify (États‑Unis).<br/>
+      Directeur de publication : Le responsable légal.</p>
+<p><strong>Protection des données :</strong><br/>
+      Conformément au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression de vos données en écrivant à oasisduplaisir@hotmail.com.</p>
+<p>© L'Oasis du plaisir</p>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="js/script.js"></script>
+<script src="js/airbnb_ical.js"></script><script>
+    document.addEventListener('DOMContentLoaded', function() {
+      flatpickr("#dateSouhaitee", {
+        locale: "fr",
+        mode: "range",
+        dateFormat: "d/m/Y",
+        minDate: "today",
+        maxDate: new Date().fp_incr(365),
+        disable: [
+          function(date) {
+            // Exemple : désactive manuellement des dates précises (à remplacer par iCal Airbnb côté serveur)
+            const disabledDates = ["2025-11-07", "2025-11-08", "2025-11-15"];
+            return disabledDates.includes(date.toISOString().split('T')[0]);
+          }
+        ],
+        onClose: function(selectedDates, dateStr, instance) {
+          if (selectedDates.length === 2) {
+            const diff = (selectedDates[1] - selectedDates[0]) / (1000*60*60*24);
+            if (diff > 2) {
+              alert("Séjour limité à 2 nuits maximum.");
+              instance.clear();
+            }
+          }
+        }
+      });
+    });
+    </script></body>
+</html>
