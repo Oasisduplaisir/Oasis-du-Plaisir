@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Oasis du plaisir - Love Room romantique près de Bordeaux</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- Galerie Lightbox --- */
+    .gallery-section {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f5f5f5;
+    }
+    .gallery-section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .lightbox.show {
+      display: flex;
+      opacity: 1;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="menu-toggle">☰ Menu</div>
+      <ul class="menu">
+        <li><a href="#love-room">Love Room</a></li>
+        <li><a href="#galerie">Galerie</a></li>
+      </ul>
+    </nav>
+    <h1>L'Oasis du plaisir</h1>
+    <p>Votre Love Room romantique près de Bordeaux — 18+</p>
+    <a href="#reservation" class="cta">Réserver maintenant</a>
+  </header>
+
+  <section id="welcome">
+    <h2>Bienvenue</h2>
+    <p>
+      Située à seulement 5 minutes de Blaye, laissez-vous séduire par la majestueuse Citadelle classée à l’Unesco et les charmants restaurants au bord de l’estuaire. 
+      À 45 minutes de Bordeaux, notre Love Room est le lieu idéal pour une soirée romantique, une surprise inoubliable ou un moment de détente à deux. 
+      Vous profiterez d’un cocon intime, niché dans un cadre paisible, avec grand jardin, table extérieure et bassin à poissons, pour des instants hors du temps.
+    </p>
+  </section>
+
+  <section id="love-room">
+    <h2>Love Room</h2>
+    <p>Jacuzzi privé à 38°, éclairage LED selon vos envies, lit King Size confortable.</p>
+    <div class="gallery-inline">
+      <img src="images/photo1.jpg" alt="Jacuzzi privé">
+      <img src="images/photo2.jpg" alt="Chambre romantique">
+      <img src="images/photo3.jpg" alt="Ambiance détente">
+    </div>
+
+    <h3>Inclus dans votre séjour</h3>
+    <ul>
+      <li>Jacuzzi privé à disposition</li>
+      <li>Lit double 160</li>
+      <li>Wi-Fi haut débit</li>
+      <li>Serviettes et peignoirs fournis</li>
+      <li>Parking gratuit sur place</li>
+      <li>Chemin de pétales de rose</li>
+    </ul>
+
+    <h3>Un cadeau de bienvenue vous attend !</h3>
+    <ul>
+      <li>Une bouteille de champagne 75cl</li>
+      <li>Un plateau apéritif</li>
+      <li>Ou une boîte mystère coquine</li>
+    </ul>
+
+    <h3>Tarifs</h3>
+    <p>
+      169 € la nuit (dimanche à jeudi)<br>
+      189 € la nuit (vendredi & samedi)<br>
+      🌹 <strong>Offre week-end 349 €</strong> (de vendredi 17h à dimanche 11h)
+    </p>
+    <p>Heure d’arrivée : à partir de 17h — Heure de départ : jusqu’à 11h</p>
+  </section>
+
+  <section id="galerie" class="gallery-section">
+    <h2>Galerie</h2>
+    <div class="gallery-grid">
+      <img src="images/galerie1.jpg" alt="Oasis du plaisir 1" onclick="openLightbox(this)">
+      <img src="images/galerie2.jpg" alt="Oasis du plaisir 2" onclick="openLightbox(this)">
+      <img src="images/galerie3.jpg" alt="Oasis du plaisir 3" onclick="openLightbox(this)">
+      <img src="images/galerie4.jpg" alt="Oasis du plaisir 4" onclick="openLightbox(this)">
+      <img src="images/galerie5.jpg" alt="Oasis du plaisir 5" onclick="openLightbox(this)">
+      <img src="images/galerie6.jpg" alt="Oasis du plaisir 6" onclick="openLightbox(this)">
+      <img src="images/galerie7.jpg" alt="Oasis du plaisir 7" onclick="openLightbox(this)">
+      <img src="images/galerie8.jpg" alt="Oasis du plaisir 8" onclick="openLightbox(this)">
+      <img src="images/galerie9.jpg" alt="Oasis du plaisir 9" onclick="openLightbox(this)">
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-img" src="">
+    </div>
+  </section>
+
+  <section id="reservation">
+    <h2>Réservez votre séjour</h2>
+    <div style="text-align:center; margin-top:20px;">
+      <iframe
+        src="https://v1.oasisduplaisir.simplybook.it/v2/"
+        style="width:100%; max-width:900px; height:900px; border:0; overflow:auto;"
+        loading="eager"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Réservation Oasis du plaisir">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact : Téléphone : 06 15 01 21 62 — 33390 Fours<br>
+    Email : oasisduplaisir@hotmail.com</p>
+
+    <p>Mentions légales :<br>
+    Ce site est édité par L’Oasis du plaisir.<br>
+    Siège social : 33390 Fours, France<br>
+    Hébergeur : Vercel<br>
+    Directeur de publication : Le responsable légal.</p>
+
+    <p>Protection des données :<br>
+    Conformément au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression de vos données en écrivant à oasisduplaisir@hotmail.com.</p>
+
+    <p>© L'Oasis du plaisir</p>
+  </footer>
+
+  <script>
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+      setTimeout(() => {
+        lightbox.classList.add('show');
+      }, 10);
+    }
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('show');
+      setTimeout(() => {
+        lightbox.style.display = 'none';
+      }, 400);
+    }
+  </script>
+</body>
+</html>
