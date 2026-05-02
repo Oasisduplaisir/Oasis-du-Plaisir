@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function(){
 (function(){ 
   var slider = document.querySelector('.slider');
   if (slider) {
-    var files = ["IMG_1058.jpg", "IMG_1050.jpg", "IMG_1056.jpg", "lavabo.jpg", "table.jpg", "bassin.jpg", "palmier.jpg", "plateau.jpg", "déjeuner.jpg", "photo10.jpeg", "photo11.jpeg", "photo12.jpeg", "photo13.jpeg", "photo14.jpeg"];
+    var files = ["IMG_1058.jpg", "IMG_1050.jpg", "IMG_1056.jpg", "lavabo.jpg", "table.jpg", "bassin.jpg", "palmier.jpg", "plateau.jpg", "déjeuner.jpg", "photo13.jpeg"];
     files.forEach(function(src, i){
       var img = document.createElement('img');
       img.src = 'images/' + src;
